@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'AGENT-1'
+            label 'AGENT-1 '
         }
     }
     stages {
@@ -19,6 +19,19 @@ pipeline {
             steps {
                 echo "Deploy stage is running"
             }
+        }
+    }
+
+    //post build
+    post {
+        always {
+            echo "Succesfully -- post_build_always"
+        }
+        failure {
+            echo "Failed -- post_build_failure"
+        }
+        failure {
+            echo "Success -- post_build_success"
         }
     }
 }
