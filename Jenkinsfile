@@ -30,7 +30,7 @@ pipeline {
         failure {
             echo "Failed -- post_build_failure"
         }
-        failure {
+        success {
             echo "Success -- post_build_success"
         }
     }
